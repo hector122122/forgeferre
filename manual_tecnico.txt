@@ -1,0 +1,624 @@
+MANUAL TÉCNICO - PÁGINA WEB FERRETERÍA FORGELINE
+=============================================
+
+ÍNDICE
+------
+1. Introducción
+2. Estructura del Proyecto
+3. Configuración Inicial
+4. Componentes Principales
+5. Estilos y Diseño
+6. Funcionalidades JavaScript
+7. Responsive Design
+8. Optimización y Rendimiento
+9. Seguridad
+10. Mantenimiento
+11. Apéndice: Códigos de Referencia
+12. Implementación 3D
+
+1. INTRODUCCIÓN
+--------------
+Este manual técnico describe la implementación de la página web de ForgeLine, una ferretería industrial. El sitio web está diseñado para ser moderno, responsivo y fácil de mantener.
+
+2. ESTRUCTURA DEL PROYECTO
+-------------------------
+2.1 Directorios
+```
+ferreteria/
+├── index.html          # Página principal
+├── css/
+│   └── styles.css     # Estilos globales
+├── js/
+│   └── scripts.js     # Funcionalidades
+└── assets/
+    ├── images/        # Imágenes y recursos
+    └── models/        # Modelos 3D
+```
+
+2.2 Archivos Principales
+- index.html: Estructura principal de la página
+- styles.css: Estilos y diseño visual
+- scripts.js: Funcionalidades y comportamientos
+
+3. CONFIGURACIÓN INICIAL
+-----------------------
+3.1 Dependencias Externas
+- W3.CSS Framework: Componentes y utilidades
+- Font Awesome: Iconos vectoriales
+- Three.js: Visualización 3D
+- Google Maps: Integración de ubicación
+
+3.2 Configuración del Entorno
+- Editor de código recomendado: Visual Studio Code
+- Navegadores soportados: Chrome, Firefox, Safari, Edge
+- Resolución mínima: 320px
+- Resolución recomendada: 1920px
+
+4. COMPONENTES PRINCIPALES
+-------------------------
+4.1 Navegación
+- Barra de navegación principal
+- Menú móvil
+- Enlaces a redes sociales
+
+4.2 Secciones
+- Inicio
+- Productos
+- Visualización 3D
+- Servicio al cliente
+
+4.3 Formularios
+- Contacto
+- Búsqueda de productos
+- Carrito de compras
+
+5. ESTILOS Y DISEÑO
+------------------
+5.1 Variables CSS
+```css
+:root {
+    --primary-color: #ff6b00;
+    --secondary-color: #001F3F;
+    --text-color: #333;
+    --background-color: #fff;
+    --transition-speed: 0.3s;
+}
+```
+
+5.2 Componentes Estilizados
+- Botones
+- Tarjetas de productos
+- Formularios
+- Navegación
+
+6. FUNCIONALIDADES JAVASCRIPT
+----------------------------
+6.1 Funciones Principales
+- Navegación dinámica
+- Gestión del carrito
+- Filtrado de productos
+- Formularios interactivos
+
+6.2 Eventos
+- Carga de página
+- Interacción del usuario
+- Responsive design
+- Animaciones
+
+7. RESPONSIVE DESIGN
+-------------------
+7.1 Breakpoints
+- Móvil: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+7.2 Componentes Responsivos
+- Menú móvil
+- Grid de productos
+- Imágenes adaptativas
+- Formularios
+
+8. OPTIMIZACIÓN Y RENDIMIENTO
+----------------------------
+8.1 Optimización de Imágenes
+- Formatos modernos (WebP)
+- Compresión adecuada
+- Lazy loading
+
+8.2 Código
+- Minificación de CSS y JavaScript
+- Caché del navegador
+- CDN para recursos externos
+
+9. SEGURIDAD
+-----------
+9.1 Implementaciones
+- HTTPS
+- Validación de formularios
+- Protección XSS
+- Actualizaciones de dependencias
+
+9.2 Buenas Prácticas
+- Sanitización de datos
+- Contraseñas seguras
+- Backups regulares
+
+10. MANTENIMIENTO
+----------------
+10.1 Tareas Regulares
+- Actualización de productos
+- Revisión de enlaces
+- Monitoreo de rendimiento
+- Copias de seguridad
+
+10.2 Documentación
+- Código comentado
+- Manual de usuario
+- Registro de cambios
+
+11. APÉNDICE: CÓDIGOS DE REFERENCIA
+----------------------------------
+11.1 Navegación Principal
+```html
+<nav class="main-navbar">
+    <div class="navbar-content">
+        <div class="navbar-left">
+            <a class="navbar-logo" href="javascript:void(0);" onclick="mostrarSeccion('inicio')">
+                <i class="fa fa-home"></i> ForgeLine
+            </a>
+            <!-- Enlaces principales -->
+        </div>
+        <div class="navbar-right">
+            <!-- Redes sociales -->
+        </div>
+    </div>
+</nav>
+```
+Explicación:
+- `<nav>`: Define la sección de navegación principal
+- `main-navbar`: Clase para estilizar la barra de navegación
+- `navbar-content`: Contenedor flexible para organizar los elementos
+- `navbar-left`: Contiene el logo y enlaces principales
+- `navbar-right`: Contiene los enlaces a redes sociales
+- `javascript:void(0)`: Previene el comportamiento predeterminado del enlace
+- `onclick="mostrarSeccion('inicio')"`: Función para cambiar de sección
+- `<i class="fa fa-home"></i>`: Icono de Font Awesome
+
+11.2 Estilos de Navegación
+```css
+.main-navbar {
+    position: fixed;          /* Fija la barra en la parte superior */
+    width: 100%;             /* Ancho completo */
+    top: 0;                  /* Alineado al tope */
+    z-index: 1000;           /* Asegura que esté sobre otros elementos */
+    background: rgba(255, 255, 255, 0.95);  /* Fondo semi-transparente */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);  /* Sombra sutil */
+}
+
+.navbar-content {
+    display: flex;           /* Layout flexible */
+    justify-content: space-between;  /* Espacio entre elementos */
+    align-items: center;     /* Centrado vertical */
+    padding: 1rem 2rem;      /* Espaciado interno */
+    max-width: 1200px;       /* Ancho máximo */
+    margin: 0 auto;          /* Centrado horizontal */
+}
+
+.navbar-link {
+    color: var(--text-color);  /* Color del texto */
+    text-decoration: none;     /* Sin subrayado */
+    padding: 0.5rem 1rem;      /* Espaciado interno */
+    border-radius: 4px;        /* Esquinas redondeadas */
+    transition: all 0.3s;      /* Animación suave */
+}
+
+.navbar-link:hover {
+    color: var(--primary-color);  /* Color al pasar el mouse */
+    background: rgba(255, 107, 0, 0.1);  /* Fondo sutil */
+}
+```
+
+11.3 Botones
+```html
+<!-- Botón Primario -->
+<button class="btn-primary">
+    <i class="fa fa-shopping-cart"></i> Comprar Ahora
+</button>
+
+<!-- Botón Secundario -->
+<button class="btn-secondary">
+    <i class="fa fa-info-circle"></i> Más Información
+</button>
+```
+Explicación:
+- `button`: Elemento HTML para botones
+- `btn-primary`: Clase para el estilo principal
+- `btn-secondary`: Clase para el estilo secundario
+- `<i class="fa fa-shopping-cart"></i>`: Icono de carrito
+- `<i class="fa fa-info-circle"></i>`: Icono de información
+
+11.4 Estilos de Botones
+```css
+/* Estilos Base para Botones */
+button {
+    padding: 0.8rem 1.5rem;    /* Espaciado interno */
+    border: none;              /* Sin borde */
+    border-radius: 4px;        /* Esquinas redondeadas */
+    cursor: pointer;           /* Cursor tipo mano */
+    font-weight: 600;          /* Texto en negrita */
+    display: inline-flex;      /* Layout flexible */
+    align-items: center;       /* Centrado vertical */
+    gap: 0.5rem;              /* Espacio entre icono y texto */
+    transition: all 0.3s;      /* Animación suave */
+}
+
+.btn-primary {
+    background: var(--primary-color);  /* Color de fondo */
+    color: white;                      /* Color del texto */
+}
+
+.btn-primary:hover {
+    background: #e05a00;               /* Color al pasar el mouse */
+    transform: translateY(-2px);       /* Efecto de elevación */
+}
+
+.btn-secondary {
+    background: var(--secondary-color);  /* Color de fondo */
+    color: white;                        /* Color del texto */
+}
+
+.btn-secondary:hover {
+    background: #002a5c;                 /* Color al pasar el mouse */
+    transform: translateY(-2px);         /* Efecto de elevación */
+}
+```
+
+11.5 Menú Móvil
+```html
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+        <span>ForgeLine</span>
+        <button class="btn-close" onclick="toggleMobileMenu()">
+            <i class="fa fa-times"></i>
+        </button>
+    </div>
+    <nav class="mobile-nav">
+        <!-- Enlaces móviles -->
+    </nav>
+</div>
+```
+Explicación:
+- `mobile-menu`: Contenedor principal del menú móvil
+- `mobile-menu-header`: Encabezado con logo y botón de cierre
+- `btn-close`: Botón para cerrar el menú
+- `mobile-nav`: Contenedor para los enlaces de navegación
+- `onclick="toggleMobileMenu()"`: Función para alternar visibilidad
+
+11.6 Estilos del Menú Móvil
+```css
+.mobile-menu {
+    display: none;              /* Oculto por defecto */
+    position: fixed;            /* Posición fija */
+    top: 0;                     /* Alineado al tope */
+    left: 0;                    /* Alineado a la izquierda */
+    width: 100%;                /* Ancho completo */
+    height: 100%;               /* Alto completo */
+    background: white;          /* Fondo blanco */
+    z-index: 2000;             /* Sobre otros elementos */
+    transform: translateX(-100%);  /* Fuera de la pantalla */
+    transition: transform 0.3s;    /* Animación suave */
+}
+
+.mobile-menu.active {
+    transform: translateX(0);     /* Visible */
+}
+
+.mobile-nav {
+    display: flex;               /* Layout flexible */
+    flex-direction: column;      /* Disposición vertical */
+    padding: 1rem;              /* Espaciado interno */
+}
+
+.mobile-nav a {
+    padding: 1rem;              /* Espaciado interno */
+    color: var(--text-color);   /* Color del texto */
+    text-decoration: none;      /* Sin subrayado */
+    border-bottom: 1px solid #eee;  /* Separador */
+    display: flex;              /* Layout flexible */
+    align-items: center;        /* Centrado vertical */
+    gap: 0.5rem;               /* Espacio entre icono y texto */
+}
+```
+
+11.7 JavaScript Principal
+```javascript
+// Función para mostrar/ocultar secciones
+function mostrarSeccion(seccionId) {
+    // Ocultar todas las secciones
+    const secciones = document.querySelectorAll('.w3-container');
+    secciones.forEach(seccion => {
+        seccion.style.display = 'none';
+    });
+    
+    // Mostrar la sección seleccionada
+    const seccionSeleccionada = document.getElementById(seccionId);
+    if (seccionSeleccionada) {
+        seccionSeleccionada.style.display = 'block';
+    }
+}
+
+// Función para agregar al carrito
+function agregarAlCarrito(producto) {
+    carrito.push(producto);        // Agregar producto al array
+    actualizarCarrito();           // Actualizar interfaz
+    mostrarNotificacion('Producto agregado al carrito');  // Feedback
+}
+
+// Función para el menú móvil
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('active');  // Alternar clase active
+}
+
+// Evento para cerrar menú al cambiar tamaño de ventana
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.remove('active');
+    }
+});
+```
+Explicación:
+- `mostrarSeccion`: Controla la navegación entre secciones
+- `agregarAlCarrito`: Gestiona el carrito de compras
+- `toggleMobileMenu`: Controla la visibilidad del menú móvil
+- `addEventListener`: Maneja eventos de la ventana
+
+11.8 Variables CSS Globales
+```css
+:root {
+    --primary-color: #ff6b00;    /* Color principal (naranja) */
+    --secondary-color: #001F3F;  /* Color secundario (azul oscuro) */
+    --text-color: #333;          /* Color de texto principal */
+    --background-color: #fff;    /* Color de fondo */
+    --transition-speed: 0.3s;    /* Velocidad de transiciones */
+}
+```
+Explicación:
+- `:root`: Define variables CSS globales
+- `--primary-color`: Color principal para elementos destacados
+- `--secondary-color`: Color secundario para elementos de soporte
+- `--text-color`: Color base para textos
+- `--background-color`: Color de fondo principal
+- `--transition-speed`: Duración estándar para animaciones
+
+GLOSARIO
+--------
+- CDN: Content Delivery Network
+- CSS: Cascading Style Sheets
+- HTML: HyperText Markup Language
+- JavaScript: Lenguaje de programación del lado del cliente
+- Responsive: Diseño adaptable a diferentes dispositivos
+- SEO: Search Engine Optimization
+- XSS: Cross-Site Scripting 
+
+12. IMPLEMENTACIÓN 3D
+-------------------
+12.1 Configuración Inicial
+```html
+<!-- Dependencias necesarias -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+
+<!-- Contenedor para el visor 3D -->
+<div class="w3-container w3-padding-32" id="3d">
+    <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <h2>Visualización 3D</h2>
+        <div class="viewer-3d">
+            <!-- El visor 3D se cargará aquí -->
+        </div>
+    </div>
+</div>
+```
+Explicación:
+- Three.js: Biblioteca principal para gráficos 3D
+- OrbitControls: Permite rotar y hacer zoom en el modelo
+- MTLLoader: Carga materiales para los modelos
+- OBJLoader: Carga modelos 3D en formato OBJ
+- viewer-3d: Contenedor donde se renderizará el modelo
+
+12.2 Estilos del Visor 3D
+```css
+.viewer-3d {
+    width: 100%;
+    height: 500px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.viewer-3d canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Controles del visor */
+.viewer-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.viewer-controls button {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.viewer-controls button:hover {
+    background: white;
+    transform: scale(1.1);
+}
+```
+Explicación:
+- Dimensiones fijas para el visor
+- Fondo y bordes redondeados
+- Canvas a pantalla completa
+- Controles flotantes con efectos hover
+
+12.3 Implementación JavaScript
+```javascript
+// Inicialización del visor 3D
+function inicializarVisor3D() {
+    const container = document.querySelector('.viewer-3d');
+    if (!container) return;
+
+    // Configuración de la escena
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xf5f5f5);
+
+    // Configuración de la cámara
+    const camera = new THREE.PerspectiveCamera(
+        75,                                     // Campo de visión
+        container.clientWidth / container.clientHeight,  // Relación de aspecto
+        0.1,                                    // Plano cercano
+        1000                                    // Plano lejano
+    );
+    camera.position.z = 5;
+
+    // Configuración del renderizador
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    container.appendChild(renderer.domElement);
+
+    // Controles de órbita
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+
+    // Iluminación
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(1, 1, 1);
+    scene.add(directionalLight);
+
+    // Cargar modelo 3D
+    const loader = new THREE.OBJLoader();
+    const mtlLoader = new THREE.MTLLoader();
+
+    mtlLoader.load('assets/models/herramienta.mtl', function(materials) {
+        materials.preload();
+        loader.setMaterials(materials);
+        
+        loader.load('assets/models/herramienta.obj', function(object) {
+            // Centrar y escalar el modelo
+            const box = new THREE.Box3().setFromObject(object);
+            const center = box.getCenter(new THREE.Vector3());
+            const size = box.getSize(new THREE.Vector3());
+            
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const scale = 2 / maxDim;
+            object.scale.multiplyScalar(scale);
+            
+            object.position.sub(center.multiplyScalar(scale));
+            scene.add(object);
+        });
+    });
+
+    // Función de animación
+    function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    // Manejo de redimensionamiento
+    window.addEventListener('resize', () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+}
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', inicializarVisor3D);
+```
+Explicación:
+- Configuración de la escena 3D con Three.js
+- Implementación de controles de órbita
+- Sistema de iluminación
+- Carga y manipulación de modelos 3D
+- Animación y renderizado
+- Manejo responsivo
+
+12.4 Formatos de Modelos 3D
+```
+assets/models/
+├── herramienta.obj    # Geometría del modelo
+└── herramienta.mtl    # Materiales del modelo
+```
+Explicación:
+- OBJ: Formato estándar para geometría 3D
+- MTL: Archivo de materiales complementario
+- Estructura de archivos organizada
+
+12.5 Optimización de Modelos 3D
+```javascript
+// Función para optimizar modelos
+function optimizarModelo3D(modelo) {
+    // Reducir polígonos
+    const simplified = modelo.clone();
+    simplified.geometry = modelo.geometry.clone();
+    simplified.geometry.mergeVertices();
+    
+    // Optimizar materiales
+    simplified.material = modelo.material.clone();
+    simplified.material.needsUpdate = true;
+    
+    return simplified;
+}
+```
+Explicación:
+- Reducción de polígonos para mejor rendimiento
+- Optimización de materiales
+- Clonación para preservar original
+
+12.6 Controles de Interacción
+```javascript
+// Configuración de controles
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;          // Suavizado de movimiento
+controls.dampingFactor = 0.05;          // Velocidad de suavizado
+controls.rotateSpeed = 0.5;             // Velocidad de rotación
+controls.zoomSpeed = 1.0;               // Velocidad de zoom
+controls.minDistance = 2;               // Zoom mínimo
+controls.maxDistance = 10;              // Zoom máximo
+controls.enablePan = true;              // Permitir desplazamiento
+controls.panSpeed = 0.5;                // Velocidad de desplazamiento
+```
+Explicación:
+- Controles de órbita para interacción
+- Parámetros de suavizado
+- Límites de zoom y rotación
+- Configuración de desplazamiento
+
+// ... existing code ... 
