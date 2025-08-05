@@ -337,7 +337,7 @@ function enviarFacturaPorCorreo(emailBodyText, numeroFactura) {
     console.log('FormData preparado:', Object.fromEntries(formData));
     
     // Realizar la petición a FormSubmit
-    fetch('https://formsubmit.co/ajax/adiney0904@gmail.com', {
+    fetch('https://formsubmit.co/ajax/hectorturcios46@gmail.com', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
