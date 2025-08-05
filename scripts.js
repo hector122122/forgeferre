@@ -352,7 +352,7 @@ const Products = {
                     name: 'Martillo Profesional',
                     category: 'Herramientas Manuales',
                     price: 1500,
-                    image: 'assets/images/martillo.jpeg',
+                    image: 'martillo.jpeg',
                     description: 'Martillo de alta calidad para trabajos profesionales',
                     stock: 50
                 },
@@ -361,7 +361,7 @@ const Products = {
                     name: 'Destornillador Set',
                     category: 'Herramientas Manuales',
                     price: 800,
-                    image: 'assets/images/destornillador.png',
+                    image: 'destornillador.png',
                     description: 'Set completo de destornilladores profesionales',
                     stock: 100
                 },
@@ -370,7 +370,7 @@ const Products = {
                     name: 'Llave Ajustable Cromada',
                     category: 'Herramientas Manuales',
                     price: 950,
-                    image: 'assets/images/llave.png',
+                    image: 'llave.png',
                     description: 'Llave ajustable de acero cromado, alta resistencia',
                     stock: 80
                 },
@@ -380,7 +380,7 @@ const Products = {
                     name: 'Taladro Inalámbrico 20V',
                     category: 'Herramientas Eléctricas',
                     price: 8500,
-                    image: 'assets/images/Taladro Inalambrico.jpeg',
+                    image: 'Taladro Inalambrico.jpeg',
                     description: 'Taladro inalámbrico de 20V con batería de litio incluida',
                     stock: 25
                 },
@@ -389,7 +389,7 @@ const Products = {
                     name: 'Sierra Circular 7 1/4"',
                     category: 'Herramientas Eléctricas',
                     price: 6200,
-                    image: 'assets/images/Sierra Circular.jpg',
+                    image: 'Sierra Circular.jpg',
                     description: 'Sierra circular potente para cortes precisos en madera',
                     stock: 15
                 },
@@ -398,7 +398,7 @@ const Products = {
                     name: 'Lijadora Orbital',
                     category: 'Herramientas Eléctricas',
                     price: 4800,
-                    image: 'assets/images/lijadora.jpeg',
+                    image: 'lijadora.jpeg',
                     description: 'Lijadora para acabados finos en madera y metal',
                     stock: 35
                 },
@@ -408,7 +408,7 @@ const Products = {
                     name: 'Tubería PVC 2m',
                     category: 'Plomería',
                     price: 1200,
-                    image: 'assets/images/Tubería PVC 2m.jpeg',
+                    image: 'Tubería PVC 2m.jpeg',
                     description: 'Tubería PVC de 2 metros para plomería',
                     stock: 75
                 },
@@ -417,7 +417,7 @@ const Products = {
                     name: 'Llave de Agua Cromada',
                     category: 'Plomería',
                     price: 250,
-                    image: 'assets/images/Llave de Agua.jpeg',
+                    image: 'Llave de Agua.jpeg',
                     description: 'Llave de agua para lavamanos con acabado cromado',
                     stock: 300
                 },
@@ -426,7 +426,7 @@ const Products = {
                     name: 'Set de Herramientas de Plomería',
                     category: 'Plomería',
                     price: 2450,
-                    image: 'assets/images/Set de Herramientas Plomería.jpg',
+                    image: 'Set de Herramientas Plomería.jpg',
                     description: 'Kit completo para reparaciones de plomería',
                     stock: 90
                 },
@@ -436,7 +436,7 @@ const Products = {
                     name: 'Cable Eléctrico #12 (Rollo 100m)',
                     category: 'Electricidad',
                     price: 2500,
-                    image: 'assets/images/cable.jpg',
+                    image: 'cable.jpg',
                     description: 'Cable eléctrico de alta conductividad para instalaciones seguras',
                     stock: 200
                 },
@@ -445,7 +445,7 @@ const Products = {
                     name: 'Multímetro Digital',
                     category: 'Electricidad',
                     price: 1180,
-                    image: 'assets/images/Multimetro Digital.jpeg',
+                    image: 'Multimetro Digital.jpeg',
                     description: 'Multímetro para mediciones de voltaje, corriente y resistencia',
                     stock: 250
                 },
@@ -454,7 +454,7 @@ const Products = {
                     name: 'Interruptor Sencillo',
                     category: 'Electricidad',
                     price: 150,
-                    image: 'assets/images/interruptor.jpg',
+                    image: 'interruptor.jpg',
                     description: 'Interruptor de luz sencillo para empotrar',
                     stock: 300
                 },
@@ -464,7 +464,7 @@ const Products = {
                     name: 'Casco de Seguridad',
                     category: 'Construcción',
                     price: 500,
-                    image: 'assets/images/Casco de Seguridad.jpg',
+                    image: 'Casco de Seguridad.jpg',
                     description: 'Casco de seguridad industrial para protección',
                     stock: 20
                 },
@@ -473,7 +473,7 @@ const Products = {
                     name: 'Botas de Seguridad',
                     category: 'Construcción',
                     price: 1750,
-                    image: 'assets/images/Botas de Seguridad.png',
+                    image: 'Botas de Seguridad.png',
                     description: 'Botas de seguridad con punta de acero',
                     stock: 60
                 },
@@ -482,7 +482,7 @@ const Products = {
                     name: 'Cemento (Bolsa 42.5kg)',
                     category: 'Construcción',
                     price: 250,
-                    image: 'assets/images/Cemento.png',
+                    image: 'Cemento.png',
                     description: 'Cemento de uso general para construcción',
                     stock: 120
                 },
@@ -492,7 +492,7 @@ const Products = {
                     name: 'Pintura Interior (Galón)',
                     category: 'Pinturas',
                     price: 1800,
-                    image: 'assets/images/pintura.jpg',
+                    image: 'pintura.jpg',
                     description: 'Pintura interior de alta calidad, acabado mate lavable',
                     stock: 30
                 },
@@ -501,7 +501,7 @@ const Products = {
                     name: 'Set de Brochas (5 Piezas)',
                     category: 'Pinturas',
                     price: 420,
-                    image: 'assets/images/Brocha Set 5pcs.jpeg',
+                    image: 'Brocha Set 5pcs.jpeg',
                     description: 'Set de brochas de cerdas sintéticas para un acabado uniforme',
                     stock: 150
                 },
@@ -510,7 +510,7 @@ const Products = {
                     name: 'Rodillo Profesional 9"',
                     category: 'Pinturas',
                     price: 350,
-                    image: 'assets/images/Rodillo Profesional.jpeg',
+                    image: 'Rodillo Profesional.jpeg',
                     description: 'Rodillo de felpa para una aplicación rápida y sin goteo',
                     stock: 100
                 },
@@ -520,7 +520,7 @@ const Products = {
                     name: 'Tijeras de Podar',
                     category: 'Jardinería',
                     price: 380,
-                    image: 'assets/images/Tijeras de podar.jpg',
+                    image: 'Tijeras de podar.jpg',
                     description: 'Tijeras de podar de alta resistencia para jardín',
                     stock: 80
                 },
@@ -529,7 +529,7 @@ const Products = {
                     name: 'Manguera de Riego 15m',
                     category: 'Jardinería',
                     price: 650,
-                    image: 'assets/images/manguera.jpg',
+                    image: 'manguera.jpg',
                     description: 'Manguera flexible y resistente con pistola de riego',
                     stock: 40
                 },
@@ -538,7 +538,7 @@ const Products = {
                     name: 'Set de Jardinería (3 piezas)',
                     category: 'Jardinería',
                     price: 450,
-                    image: 'assets/images/set-jardin.jpg',
+                    image: 'set-jardin.jpg',
                     description: 'Kit básico de jardinería con pala, rastrillo y trasplantador',
                     stock: 110
                 }
